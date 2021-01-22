@@ -6,9 +6,13 @@
 
 A one-paragraph overview of the project, including the business problem, data, methods, results and recommendations.
 
+This analysis will use data samples to study the correlation between movie genre and revenue, ratings, and profitability to help give insight to Microsoft's new movie studio in their endeavor to compete in this industry. By approaching the movie industry from the various angles by which movies are deemed to be success, this analysis presents some insight on which genres to pursue and how to go about them. By analyzing revenue and probability of profitability, this analysis strives to ensure that this new movie studio is generating a positive revenue rather than a deficit. Additionally, by exploring the impact of ratings and its correlation to genre, it will be easier for this movie studio to create a impactful, global reputation as a premier film making service.
+
 ## Business Problem
 
 Summary of the business problem you are trying to solve, and the data questions that you plan to answer in order to solve them.
+
+Creating a movie can be a very risky investment, especially with little knowledge of the statistics of the industry. Since movies are heavily time and capital consuming, it is of utmost importance to carefully plan out business strategies in order to be successful. Questions such as, "What genres create the most revenue and have the highest probability of generating profit?" and "Which genres will be best to accumulate the most and highest ratings?" are relevant to this analysis and for the success of the Microsoft Movie Studio.
 
 ***
 Questions to consider:
