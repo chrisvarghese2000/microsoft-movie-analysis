@@ -1,67 +1,83 @@
-# Phase 1 Project Template - Minimum Viable Product (MVP)
+# Microsoft Movie Analysis
 
-![blueprint](images/blueprint.png)
+**Authors**: Christopher Varghese
 
-This repository is like a blueprint, providing structure for your first End of Phase Project. We suggest you base your Phase 1 project off of this repository so you can focus less on formatting and organization, and more on the _analysis and communication skills_ that will support your progress through the course. This template is designed to make your project portfolio-ready in order to impress the future employers who will review it. 
+## Overview
 
-## Repository Contents
+This analysis will use data samples to study the correlation between movie genre and revenue, ratings, and profitability to help give insight to Microsoft's new movie studio in their endeavor to compete in this industry. By approaching the movie industry from the various angles by which movies are deemed to be success, this analysis presents some insight on which genres to pursue and how to go about them. By analyzing revenue and probability of profitability, this analysis strives to ensure that this new movie studio is generating a positive revenue rather than a deficit. Additionally, by exploring the impact of ratings and its correlation to genre, it will be easier for this movie studio to create a impactful, global reputation as a premier film making service.
 
-Below is a list of the contents of this repository - instructions for using them are in the next section.
+## Business Problem
 
-- `README.md`: The README for this repo explaining its contents - you're reading it now.
-- `TEMPLATE_README.md`: An example of a project README that provides a brief overview of your whole project.
-- `dsc-phase1-project-template.ipynb`: A starter Jupyter Notebook with headings, code examples and guiding questions.
-- `create_sql_database.ipynb`: A notebook for creating an SQL database if you would prefer to use SQL for this project.
-- `DS_Project_Presentation_Template.pdf`: A starter slide deck presenting your project - here is an [editable version](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy).
-- `data` folder: A folder for the data you reference with your code.
-- `src` folder: A folder containing custom functions.
-- `images` folder: A folder for the images you reference in your files .
-- `.gitignore`: A hidden file that tells git to not track certain files and folders.
+Creating a movie can be a very risky investment, especially with little knowledge of the statistics of the industry. Since movies are heavily time and capital consuming, it is of utmost importance to carefully plan out business strategies in order to be successful. Questions such as, "What genres create the most revenue and have the highest probability of generating profit?" and "Which genres will be best to accumulate the most and highest ratings?" are relevant to this analysis and for the success of the Microsoft Movie Studio.
 
-## Instructions For Using This Repository
+## Data
 
-### Fork This Repository
+IMDb Data: This data is pulled from IMDb's various datasets. There are four datasets that we are looking at which include the movie titles, ratings, crew members, and names for all crew members used. The first three data sets are linked by the alphanumeric code given for each unique movie title and the fourth data set will be used to find the names corrosponding to the aphanumeric code used for directors and writers of these films.
 
-1. Fork this repository to your personal account
-   - In GitHub, go to this repository and click the "Fork" button in the upper right.
-   
-2. Change the name of your fork of this repo to a _descriptive_ name of your choosing
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Options" -> "Repository Name" -> "Rename"
-   - Make the name descriptive, since potential employers will read it. Ex: "Microsoft-Movie-Analysis" is better than "Project-1"
+TN Data: This data includes movie titles, dates, and most importantly, the production budget, domestic gross, and international gross. This is essential for analzying the financial side of these movies.
 
-3. Use `git clone` to clone your fork of this repo to your local computer
+## Methods
 
-### Work In Your Fork Of This Repository
+Genres are a very important category of movies since individuals have prefrences for different genres. Additionally, each genre may have varying budgets, ratings, revenue, etc. I utilized descriptive analysis including horizontal bar charts and stacked frequency charts. This provides an insightful overview of the relationship of genres with various features that are used to quantify the sucess of a movie.
 
-- Work in the repo clone that you created on your local machine
-- Start writing and coding in the Jupyter Notebook `dsc-phase1-project-template.ipynb`
-- Fill in the README template in `TEMPLATE_README.md`
-- Use `git add`, `git commit`, and `git push` often to update your repo in GitHub
-   - For a refresher on how to do this and why it's important, review Topic 2: Bash and Git
+## Results
 
-### Use The Slide Template
+### Genres ranked by Revenue(1)
 
-1. Go to [this link](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy) to make an editable copy of the slide deck in your own Google Drive account
-2. Go to "Slide," select "Change Theme," and pick a theme you like so your presentation doesn't look like everyone else's
+Now that we have some understanding of how profit varies by genre, this graph gives actionable insight into the correlation between profit and genre. By taking the average revenue and categorzing it by the genre, it helps to show which genres will yield the most profit. This is important for a budding movie studio since generating capital is a primary focus for the business.
 
-### Tidy Up Your Project
+![genres by profit](images/genres_revenue.png)
 
-- Change the file name of the Jupyter Notebook (`dsc-phase1-project-template.ipynb`) to something more descriptive
-- Save an appropriately-named PDF version of your slide deck to the repository
-- Rename the template readme you've been working in by running `git mv TEMPLATE_README.md README.md`
-- Delete unnecessary files from the repo using `git rm`
-   - The presentation PDF: `DS_Project_Presentation_Template.pdf`
-   - This README file: `README.md`
-   - Any unused data files in the `data` folder
-   - Any unused images in the `images` folder
+### Genres ranked by Average Rating(2)
 
-### Submit Your Project
+Understanding the relationship between genres and ratings required multiple graphings. In the first graph, since the average ratings were so close by genre, the visual was helpful but was not insightful enough to make any reccomendations. In the second graph, by tallying the amount of ratings that were above average(near the averages of the first graph) I was able to better depict how certain genres recieve better reviews. Although the genres that are the most profitable and most highly rated do not align, it is important to consider both as high ratings for a studio will likely generate viewership for all media created by that studio.
 
-To submit your project, please follow the instructions in the [Project Submission & Review](https://learning.flatironschool.com/courses/1384/pages/project-submission-and-review-online?module_item_id=91641) page on Canvas.
+![genres ranked by avg rating](images/genres_by_rating.png)
 
+### Number of Ratings over 7.0 by Genre(3)
 
-### Notes
+![genres with ratings over 7](images/genres_7_ratings.png)
 
-- The visualizations in the notebook use best practices for visualization that you should try to emulate. For example, they have clear axes, descriptive titles, and appropriate number formatting.
-- The `dsc-phase1-project-template.ipynb` is intended to be the _final version_ of your project. The first notebook you create will not look like this. You are encouraged to start with a very disorderly notebook and clean it as you go.
-- If you would like to use SQL for this project, please open the `create_sql_database.ipynb` notebook, and run the cells. The schema for the database is stored in the images/ folder.
+### Profitability Spread by Genre(4)
+
+This analysis takes a deeper look into the individual genres and determines what percentages of the movies are highly profitable to a loss. This bar chart helps to almost determine a probability of success since it showcases how many of the movies flopped, did okay, and did extremely well.
+
+![profitibility spread](images/profitability.png)
+
+## Conclusions
+
+My analysis leaves 3 main considerations for Microsoft's Movie Studio to consider.
+
+**Microsoft should focus on creating titles in Animation, Adventure, and Musicals to yield the highest profits.** The top 5 most profitable genres on average are Animation, Adventure, Musical, Sci-Fi, and Fantasy. By focusing on at least the top 3 of these genres, Microsoft has a very high chance of at least recouping their initial investments as well as generating capital to expanding their studio and its productions.
+
+**Microsoft should focus on creating titles in Drama and Comedy to ensure high ratings.** While the quality of a production will correlate to its ratings, the statistics show that drama and comedy rake in the highest ratings by far. By exploring these genres, Microsoft is sure to engage their viewers and recieve high ratings which will translate to increased viewership and recognition for their studio.
+
+**When considering the portfolio of Microsofts Studio's productions, they should try to limit most of their work to Action, Adventure, History, and Animation, and stay away from Reality TV, and Horror.** The first few genres have high ratios of Generating a profit when compared to their probability of flopping. The last two are the opposite.
+
+### Next Steps
+
+Further study can be conducted to create even more actionable insights
+
+**Further study on correlation between genres** This would allow the studio to narrow down even more conslusively what kind of pieces they would like to create.
+
+**Further study on key players in the industry** By analyzing reviews of actors and directors as well as other data specific to many role players in the film business, the studio may be able to focus on recruiting casts with the highest chance of success
+
+**Data on Production Time** Along with monetary costs, the amount of time needed to produce various pieces is valuable insight in choosing which film types are the smartest business decisions to pursue.
+
+## For More Information
+
+Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-template.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+
+For any additional questions, please contact **Christopher Varghese, chrisvarghese2000@gmail.com**
+
+## Repository Structure
+
+Describe the structure of your repository and its contents, for example:
+
+```
+├── README.md                           <- The top-level README for reviewers of this project
+├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
+├── DS_Project_Presentation.pdf         <- PDF version of project presentation
+├── data                                <- Both sourced externally and generated from code
+└── images                              <- Both sourced externally and generated from code
+```
